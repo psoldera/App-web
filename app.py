@@ -28,12 +28,14 @@ def salvar():
 
     filmes.append(novos_filmes)
     
-    return redirect('https://5000-aqua-puma-ed71mgum.ws-us17.gitpod.io/')
+    return redirect('https://5000-tomato-ermine-qxytrdxe.ws-us17.gitpod.io/')
 
 @app.route('/buscar', methods=['POST'])
 def buscar():
     lista_filme = []
     pesquisa = request.form['pesquisa']
+    if pesquisa == "":
+        return render_template('erro.html')
     for filme in filmes: 
         if pesquisa.lower() in filme['nome_filme'].lower():
             lista_filme.append(filme)
@@ -42,10 +44,12 @@ def buscar():
 @app.route('/deletar', methods=['POST'])
 def deletar():
     deleta = request.form['deleta']
+    if deleta == "":
+        return render_template('erro.html')
     for filme in filmes:
         if filme['nome_filme'].lower() == deleta.lower() :
             filmes.remove(filme)
-    return redirect('https://5000-aqua-puma-ed71mgum.ws-us17.gitpod.io/')
+    return redirect('https://5000-tomato-ermine-qxytrdxe.ws-us17.gitpod.io/')
 
     
 app.run(debug=True)
