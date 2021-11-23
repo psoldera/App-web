@@ -28,7 +28,7 @@ def salvar():
 
     filmes.append(novos_filmes)
     
-    return redirect('https://5000-tomato-ermine-qxytrdxe.ws-us17.gitpod.io/')
+    return redirect('https://5000-yellow-horse-ve3m6bqg.ws-us17.gitpod.io/')
 
 @app.route('/buscar', methods=['POST'])
 def buscar():
@@ -49,7 +49,7 @@ def deletar():
     for filme in filmes:
         if filme['nome_filme'].lower() == deleta.lower() :
             filmes.remove(filme)
-    return redirect('https://5000-tomato-ermine-qxytrdxe.ws-us17.gitpod.io/')
+    return redirect('https://5000-yellow-horse-ve3m6bqg.ws-us17.gitpod.io/')
 
     
 app.run(debug=True)
